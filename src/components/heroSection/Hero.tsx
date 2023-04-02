@@ -25,7 +25,7 @@ function HeroSection() {
 
   const selectedRole = GetQueryRole();
 
-  const isPersonnel = selectedRole === "homepagesearchwaitress";
+  const isPersonnel = selectedRole === "waitress";
 
   const theme = isPersonnel ? "#4A7081" : "#483F44";
 
@@ -36,7 +36,7 @@ function HeroSection() {
 
     setData([]);
 
-    if (getQueryValue(router) === "homepagesearchwaitress") {
+    if (getQueryValue(router) === "waitress") {
       const response = await getWaitressJobs({ city: selectedCity });
 
       if (response) {

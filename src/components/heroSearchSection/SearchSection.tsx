@@ -30,7 +30,7 @@ const SearchBox = ({
 }: Props) => {
   const selectedRole = GetQueryRole();
 
-  const isPersonnel = selectedRole === "homepagesearchwaitress";
+  const isPersonnel = selectedRole === "waitress";
 
   const theme = isPersonnel ? "#577E8F" : "#393236";
 
@@ -48,7 +48,7 @@ const SearchBox = ({
         <CancelIcon />
       </IconButton>
       <h6 className={styles.search__results__title}>
-        {selectedRole === "homepagesearchwaitress"
+        {selectedRole === "waitress"
           ? `Discover the best jobs in ${
               value.trim().length > 0 ? value : "München"
             }`
