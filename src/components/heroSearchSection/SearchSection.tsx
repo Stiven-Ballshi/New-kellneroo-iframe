@@ -1,26 +1,25 @@
-import React from 'react'
+import React from "react";
 
-import CircularProgress from '@mui/material/CircularProgress'
-import classNames from 'classnames'
+import CircularProgress from "@mui/material/CircularProgress";
+import classNames from "classnames";
 
-import CancelIcon from '@mui/icons-material/Cancel'
+import CancelIcon from "@mui/icons-material/Cancel";
 
-import { GetQueryRole } from '../../hooks/getQueryRole'
+import { GetQueryRole } from "../../hooks/getQueryRole";
 
-import Card, { Props as CardProps } from './Card'
+import Card, { Props as CardProps } from "./Card";
 
-import { IconButton } from '@mui/material'
+import { IconButton } from "@mui/material";
 
-import styles from './searchCard.module.scss'
-import { Trans, useTranslation } from 'react-i18next'
+import styles from "./searchCard.module.scss";
 
 type Props = {
-  data: CardProps[]
-  loading: boolean
-  className?: string
-  value: string
-  setVisibleModal: React.Dispatch<React.SetStateAction<boolean>>
-}
+  data: CardProps[];
+  loading: boolean;
+  className?: string;
+  value: string;
+  setVisibleModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const SearchBox = ({
   data,
@@ -29,13 +28,11 @@ const SearchBox = ({
   value,
   setVisibleModal,
 }: Props) => {
-  const selectedRole = GetQueryRole()
+  const selectedRole = GetQueryRole();
 
-  const isPersonnel = selectedRole === 'waitress'
+  const isPersonnel = selectedRole === "homepagesearchwaitress";
 
-  const { t } = useTranslation('header')
-
-  const theme = isPersonnel ? '#577E8F' : '#393236'
+  const theme = isPersonnel ? "#577E8F" : "#393236";
 
   return (
     <div
@@ -51,19 +48,13 @@ const SearchBox = ({
         <CancelIcon />
       </IconButton>
       <h6 className={styles.search__results__title}>
-        {selectedRole === 'waitress' ? (
-          <Trans
-            t={t}
-            i18nKey="search-user-text-waitress" // optional -> fallbacks to defaults if not provided
-            values={{ city: `${value.trim().length > 0 ? value : 'München'}` }}
-          />
-        ) : (
-          <Trans
-            t={t}
-            i18nKey="search-user-text-waitress" // optional -> fallbacks to defaults if not provided
-            values={{ city: `${value.trim().length > 0 ? value : 'München'}` }}
-          />
-        )}
+        {selectedRole === "homepagesearchwaitress"
+          ? `Discover the best jobs in ${
+              value.trim().length > 0 ? value : "München"
+            }`
+          : `Discover your new staff in  ${
+              value.trim().length > 0 ? value : "München"
+            }`}
       </h6>
 
       <div
@@ -86,7 +77,7 @@ const SearchBox = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchBox
+export default SearchBox;

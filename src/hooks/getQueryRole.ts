@@ -4,7 +4,7 @@ import { NextRouter, useRouter } from 'next/router'
 
 export const values = ['owner', 'waitress']
 
-export type PositionTypes = 'owner' | 'waitress' | undefined
+export type PositionTypes = 'homepagesearchowner' | 'homepagesearchwaitress' | undefined
 
 export const getQueryValue = (router: NextRouter): PositionTypes => {
   const urlQuery = router.query.search

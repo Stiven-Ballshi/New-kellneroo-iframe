@@ -11,7 +11,6 @@ import useCheckMobileScreen from "../../hooks/useMobile";
 
 import styles from "./hero.module.scss";
 import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
 
 function HeroSection() {
   const router = useRouter();
@@ -26,11 +25,9 @@ function HeroSection() {
 
   const selectedRole = GetQueryRole();
 
-  const isPersonnel = selectedRole === "waitress";
+  const isPersonnel = selectedRole === "homepagesearchwaitress";
 
   const theme = isPersonnel ? "#4A7081" : "#483F44";
-
-  const { t } = useTranslation("header");
 
   const getJobs = async ({ city }: { city: string }) => {
     const selectedCity = city.trim().length > 0 ? city : "Munich";
@@ -39,7 +36,7 @@ function HeroSection() {
 
     setData([]);
 
-    if (getQueryValue(router) === "waitress") {
+    if (getQueryValue(router) === "homepagesearchwaitress") {
       const response = await getWaitressJobs({ city: selectedCity });
 
       if (response) {
