@@ -49,10 +49,10 @@ const SearchBox = ({
       </IconButton>
       <h6 className={styles.search__results__title}>
         {selectedRole === "waitress"
-          ? `Discover the best jobs in ${
+          ? `Entdecke die besten Jobs in ${
               value.trim().length > 0 ? value : "München"
             }`
-          : `Discover your new staff in  ${
+          : `Entdecke Dein neues Personal in  ${
               value.trim().length > 0 ? value : "München"
             }`}
       </h6>
