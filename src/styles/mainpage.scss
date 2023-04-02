@@ -1,0 +1,80 @@
+@import './utils/_breakpoints.scss';
+
+.mainpage-container {
+  height: 65vh;
+
+  @include media-breakpoint-up(sm) {
+    height: 90vh;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: calc(100vh - 100px);
+  }
+}
+
+.jobSectionContainer .homepage__subtitle {
+  color: #9fb4c5;
+}
+
+.jobSectionContainer:last-of-type .homepage__subtitle {
+  color: #716b6e;
+}
+
+.tags__container {
+  margin: auto;
+}
+
+.scrollBottomLink svg:hover {
+  color: gray;
+}
+/* ------------------------------ Tag Div ----------------------------- */
+
+.tags__div {
+  background: #698996;
+  color: #9fb4c5;
+}
+
+.tags__div:hover {
+  background: white;
+  color: #526d83;
+}
+
+.tags__div {
+  min-width: 150px;
+  transition: background 0.1s ease-in;
+}
+
+/* ----------------------------- Second Tag Div ----------------------------- */
+.jobSectionContainer:last-of-type .tags__container {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.jobSectionContainer:last-of-type .tags__container .tags__div {
+  background: #5a5056;
+  color: #aca7ab;
+}
+
+.jobSectionContainer:last-of-type .tags__container .tags__div:hover {
+  background: white;
+  color: #5a5056;
+}
+
+.jobSectionContainer .buttonContainer .linkToPage {
+  color: #43596a;
+  transition: background 0.1s ease-in-out;
+}
+
+.jobSectionContainer .buttonContainer .linkToPage:hover {
+  color: white;
+  background: #43596a;
+}
+
+.jobSectionContainer:last-of-type .buttonContainer .linkToPage {
+  color: #393236;
+  transition: background 0.1s ease-in-out;
+}
+
+.jobSectionContainer:last-of-type .buttonContainer .linkToPage:hover {
+  color: white;
+  background: #5a5056;
+}

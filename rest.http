@@ -1,0 +1,9 @@
+GET http://localhost:1337/api/blogs?populate=*&pagination[pageSize]=100000&locale=all HTTP/1.1
+Content-Type: application/json
+
+
+GET http://localhost:1337/api/blogs?populate=*&slug= HTTP/1.1
+Content-Type: application/json
+
+
+

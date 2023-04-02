@@ -1,0 +1,55 @@
+@import '../utils/typography';
+
+.card {
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .card__image {
+      min-width: 100%;
+      min-height: 250px;
+      max-height: 250px;
+
+      object-fit: cover;
+      border-bottom-left-radius: 65px;
+    }
+
+    .card__title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      // line-height: 24px; /* fallback */
+      max-height: 24px * 3; /* fallback */
+
+      @include typography(24px, 600, 24px, 0, left);
+    }
+
+    .card__description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      // line-height: 24px; /* fallback */
+      max-height: 24px * 3; /* fallback */
+
+      @include typography(16px, 400, 24px, 0, left);
+    }
+
+    .card__info {
+      display: flex;
+      align-items: center;
+      row-gap: 17px;
+      column-gap: 17px;
+
+      p {
+        color: #a1a1a1;
+
+        @include typography(12px, 700, 24px, 0, left);
+      }
+    }
+  }
+}

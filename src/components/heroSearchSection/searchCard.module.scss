@@ -1,0 +1,412 @@
+@import '../../styles/utils/breakpoints';
+@import '../../styles/utils/typography';
+
+.search__results {
+  border-radius: 20px;
+
+  padding: 30px;
+
+  height: 56.5rem;
+
+  width: 50%;
+
+  font-weight: bold;
+
+  position: relative;
+
+  @include media-breakpoint-down(xs) {
+    padding: 10px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+
+    flex: 1;
+
+    height: 38rem;
+  }
+
+  @media (min-width: 1535px) {
+    height: 54rem !important;
+  }
+
+  &__title {
+    color: white;
+
+    @include typography(18px, 700, 22px, 0em, left);
+
+    margin-bottom: 10px;
+
+    @include media-breakpoint-down(xs) {
+      padding-right: 40px;
+    }
+  }
+}
+
+.card__container {
+  overflow-y: auto;
+
+  height: 95%;
+  width: 100%;
+
+  padding-right: 1rem;
+
+  @include media-breakpoint-down(xs) {
+    padding-right: 0;
+  }
+
+  &.card__container__noData {
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .loading,
+  .empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .empty {
+    color: white;
+
+    @include typography(18px, 700, 22px, 0em, left);
+  }
+
+  .card {
+    background: white;
+
+    margin-right: 10px;
+    margin-bottom: 16px;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 35% auto;
+
+    border-radius: 20px;
+    min-height: 160px;
+
+    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+
+    &__left {
+      position: relative;
+
+      .break {
+        position: absolute;
+        bottom: 0;
+
+        border-bottom-left-radius: 20px;
+
+        z-index: 100;
+
+        width: 100%;
+        height: 70%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 10.19%,
+          #000000 147.18%
+        );
+
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+      }
+
+      .card__empty {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+        max-height: 170px;
+        border-bottom-left-radius: 18px;
+        border-top-left-radius: 18px;
+
+        svg {
+          color: rgb(74, 112, 129);
+        }
+      }
+
+      img {
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      &__author_image {
+        border-radius: 5px;
+      }
+
+      &__tag {
+        position: absolute;
+
+        background: #ccfa69;
+
+        border-radius: 20px;
+
+        padding: 3.5px 10px;
+
+        top: 4%;
+        left: 6%;
+
+        @include typography(14px, 500, 10px, 0em, center);
+      }
+
+      &__user_icons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+
+        bottom: 2%;
+
+        column-gap: 10px;
+
+        z-index: 10000;
+      }
+    }
+
+    &__right {
+      width: 100%;
+      height: 100%;
+
+      &__upper {
+        background: #f1f1f1;
+
+        height: 100%;
+
+        padding: 10px;
+
+        border-radius: 0px 20px 20px 0px;
+
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+      }
+
+      &__name {
+        @include typography(20px, 600, 24px, 0em, left);
+      }
+
+      &__status_container {
+        display: flex;
+        align-items: center;
+      }
+
+      &__status {
+        width: 8px;
+        height: 8px;
+        max-width: 8px;
+        max-height: 8px;
+
+        margin-right: 10px;
+
+        border-radius: 50%;
+      }
+
+      &__status_text {
+        margin-right: 10px;
+
+        @include typography(13px, 400, 12px, 0em, center);
+      }
+
+      &__availability {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 5px;
+
+        .available {
+          @include typography(14px, 500, 14px, 0em, center);
+
+          background: #ccfa69;
+
+          border-radius: 20px;
+
+          padding: 2px 8px;
+          margin: 3px 0;
+        }
+
+        .distance {
+          background: #433a3f;
+
+          display: flex;
+          align-items: center;
+          border-radius: 20px;
+
+          margin-left: 10px;
+
+          padding: 2px 6px;
+
+          color: white;
+
+          font-size: 14px;
+        }
+      }
+
+      .job__details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: flex-start;
+
+        row-gap: 6px;
+        column-gap: 6px;
+
+        margin-top: 10px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 0px;
+        }
+
+        .per__week,
+        .wage,
+        .benefits .main__benefits {
+          display: flex;
+          align-items: center;
+          row-gap: 4px;
+          column-gap: 4px;
+
+          background-color: #4a7081;
+
+          color: white;
+
+          width: fit-content;
+
+          padding: 6px 13px;
+
+          border-radius: 30px;
+        }
+
+        .benefits {
+          display: flex;
+          align-items: center;
+          row-gap: 6px;
+          column-gap: 6px;
+
+          flex-wrap: wrap;
+
+          .main__benefits {
+            background-color: #577e8f;
+          }
+        }
+
+        .other__benefits {
+          @include media-breakpoint-down(md) {
+            position: absolute;
+
+            left: 65%;
+          }
+
+          @include media-breakpoint-down(sm) {
+            position: absolute;
+
+            left: 80%;
+
+            top: 50%;
+          }
+
+          color: #6a6a6a;
+
+          display: flex;
+          align-items: center;
+
+          justify-content: center;
+
+          @include media-breakpoint-down(xs) {
+            left: 67%;
+
+            top: 50%;
+          }
+
+          @include typography(14px, 500, 14px, 0em, center);
+        }
+      }
+
+      &__jobPositions {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        row-gap: 5px;
+
+        margin-top: 5px;
+      }
+
+      &__jobType {
+        border: 1px solid black;
+
+        padding: 4px 10px;
+
+        @include typography(14px, 500, 14px, 0em, left);
+
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+        row-gap: 3px;
+      }
+
+      &__actions {
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 10px;
+
+        .right {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+.more__benefits {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  column-gap: 4px;
+  padding: 0;
+  margin: 0;
+
+  li {
+    @include typography(12px, 500, 14px, 0em, left);
+  }
+}
+
+.modal__close_button {
+  display: none !important;
+
+  @include media-breakpoint-down(sm) {
+    display: block !important;
+  }
+}

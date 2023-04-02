@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  PAGE GLOBAL STYLES  */
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-Thin.otf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-Light.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-SemiBold.otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('./Archia-Bold.otf');
+  font-weight: 700;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div {
+    font-family: 'Archia';
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+active {
+  color: red;
+}
+
+.rounded-corner {
+  border-bottom-left-radius: 100px;
+}
+
+.image-size {
+  min-width: 350px;
+  min-height: 250px;
+  max-height: 250px;
+  width: 100%;
+  border-bottom-left-radius: 65px;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+}
+
+.link-width {
+  width: 380px;
+}
+
+.link-width:hover {
+  box-shadow: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.blog-title {
+  margin: 20px 0;
+  color: #070707;
+  font-family: 'Archia';
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 24px;
+  letter-spacing: 2px;
+}
+
+.blog-description {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #070707;
+  font-family: 'Archia';
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.customTrack .mantine-Switch-body .mantine-Switch-track {
+  background: #ccfa69 !important;
+  border-color: #4a7081 !important;
+}
+
+.customTrack .mantine-Switch-body .mantine-Switch-track .mantine-Switch-thumb {
+  border-color: #ccfa69 !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 1rem;
+  border-color: #d5d5d5;
+  background-color: #d5d5d5;
+}
+
+/* BROWSER SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 7px;
+  padding-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9f9f9f;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
