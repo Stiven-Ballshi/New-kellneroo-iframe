@@ -1,5 +1,5 @@
-@import '../../styles/utils/breakpoints';
-@import '../../styles/utils/typography';
+@import "../../styles/utils/breakpoints";
+@import "../../styles/utils/typography";
 
 .search__results {
   border-radius: 20px;
@@ -99,24 +99,28 @@
     &__left {
       position: relative;
 
+      .image__div {
+        filter: blur(2px);
+      }
+
       .break {
-        position: absolute;
-        bottom: 0;
+        // position: absolute;
+        // bottom: 0;
 
-        border-bottom-left-radius: 20px;
+        // border-bottom-left-radius: 20px;
 
-        z-index: 100;
+        // z-index: 100;
 
-        width: 100%;
-        height: 70%;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 10.19%,
-          #000000 147.18%
-        );
+        // width: 100%;
+        // height: 70%;
+        // background: linear-gradient(
+        //   180deg,
+        //   rgba(0, 0, 0, 0) 10.19%,
+        //   #000000 147.18%
+        // );
 
-        border-bottom: 1px solid #1f1209;
-        box-shadow: 0 20px 20px -20px #333;
+        // border-bottom: 1px solid #1f1209;
+        // box-shadow: 0 20px 20px -20px #333;
       }
 
       .card__empty {
